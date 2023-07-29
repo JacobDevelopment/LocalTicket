@@ -5,5 +5,8 @@ module io.jacobking.localticket {
         requires org.controlsfx.controls;
                             
     opens io.jacobking.localticket to javafx.fxml;
+    opens io.jacobking.localticket.gui.controller to javafx.fxml;
     exports io.jacobking.localticket;
+    exports io.jacobking.localticket.gui.controller to javafx.fxml;
 }
+

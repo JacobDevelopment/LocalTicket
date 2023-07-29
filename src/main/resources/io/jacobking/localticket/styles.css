@@ -1,0 +1,85 @@
+* {
+    -fx-primary: #000022;
+    -fx-secondary: #001242;
+    -fx-blue-text: #0094C6;
+    -fx-mint: #EFF6EE;
+    -fx-warning: #F02D3A;
+}
+
+.main {
+    -fx-background-color: -fx-mint;
+    -fx-border-width: 0 0 0 5px;
+    -fx-border-color: -fx-blue-text;
+    -fx-border-style: solid;
+}
+
+.sidebar {
+    -fx-background-color: -fx-primary;
+}
+
+.title-header {
+    -fx-text-fill: -fx-blue-text;
+    -fx-font-size: 30px;
+    -fx-font-family: Calibri;
+}
+
+.title-version-header {
+    -fx-font-family: Calibri;
+    -fx-text-fill: -fx-mint;
+}
+
+.core-button {
+    -fx-background-color: -fx-mint;
+    -fx-text-fill: -fx-secondary;
+    -fx-font-size: 12px;
+    -fx-font-weight: bolder;
+}
+
+.core-button:hover {
+    -fx-background-color: -fx-secondary;
+    -fx-border-color: -fx-mint;
+    -fx-text-fill: -fx-mint;
+    -fx-cursor: hand;
+}
+
+.menu {
+    -fx-border-color: -fx-blue-text;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+}
+
+.core-menu-button {
+    -fx-background-color: -fx-primary;
+    -fx-text-fill: -fx-blue-text;
+    -fx-font-size: 15px;
+    -fx-font-weight: bolder;
+    -fx-font-family: Calibri;
+}
+
+.core-menu-button:hover {
+    -fx-background-color: -fx-mint;
+    -fx-border-color: -fx-primary;
+    -fx-cursor: hand;
+}
+
+.core-menu-button-active {
+    -fx-background-color: -fx-mint;
+    -fx-border-color: -fx-text-blue;
+    -fx-border-width: 0px 0px 2px 0px;
+    -fx-border-style: solid;
+    -fx-cursor: pointer;
+}
+
+.core-menu-button-active:hover {
+    -fx-cursor: pointer;
+}
+
+.content {
+    -fx-border-color: -fx-blue-text;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+}
+
+.profile-image {
+
+}

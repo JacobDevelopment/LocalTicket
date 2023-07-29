@@ -20,13 +20,13 @@ ext {
 sourceCompatibility = '19'
 targetCompatibility = '19'
 
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
   options.encoding = 'UTF-8'
 }
 
 application {
   mainModule = 'io.jacobking.localticket'
-  mainClass = 'io.jacobking.localticket.HelloApplication'
+  mainClass = 'io.jacobking.localticket.LocalTicket'
 }
 
 javafx {
