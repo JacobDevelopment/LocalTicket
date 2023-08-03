@@ -9,9 +9,9 @@ public class FileIO {
 
     }
 
-    public static boolean createFile(final String path) throws IOException {
+    public static File createFile(final String path) throws IOException {
         Checks.notEmpty(path, "File path");
-        return new File(path).createNewFile();
+        return new File(path);
     }
 
     public static boolean doesFileExist(final String path) {

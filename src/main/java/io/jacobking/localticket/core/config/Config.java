@@ -1,7 +1,7 @@
 package io.jacobking.localticket.core.config;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import io.jacobking.localticket.core.utility.FileCommons;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
@@ -22,7 +22,7 @@ public class Config {
 
     public void initialize() throws IOException {
         final Properties properties = new Properties();
-        properties.load(new FileReader(ConfigCommons.CONFIG_DIRECTORY));
+        properties.load(new FileReader(FileCommons.CONFIG_DIRECTORY));
         this.databaseUrl = properties.getProperty("database_url");
         this.databaseUsername = properties.getProperty("database_username");
         this.databasePassword = properties.getProperty("database_password");
