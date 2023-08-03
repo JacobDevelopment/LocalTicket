@@ -1,6 +1,5 @@
 package io.jacobking.localticket.gui.controller;
 
-import io.jacobking.localticket.utility.Styler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;

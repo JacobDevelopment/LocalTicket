@@ -8,5 +8,8 @@ module io.jacobking.localticket {
     opens io.jacobking.localticket.gui.controller to javafx.fxml;
     exports io.jacobking.localticket;
     exports io.jacobking.localticket.gui.controller to javafx.fxml;
+
+    opens io.jacobking.localticket.core.object to javafx.base;
+    exports io.jacobking.localticket.core.object to javafx.base;
 }
 

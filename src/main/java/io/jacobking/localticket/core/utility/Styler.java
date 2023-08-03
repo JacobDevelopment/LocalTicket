@@ -1,4 +1,4 @@
-package io.jacobking.localticket.utility;
+package io.jacobking.localticket.core.utility;
 
 public class Styler {
 
