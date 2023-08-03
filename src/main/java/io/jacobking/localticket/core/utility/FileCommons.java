@@ -18,4 +18,12 @@ public class FileCommons {
     public static final String CONFIG_DIRECTORY = String.format("%s\\%s", MAIN_DIRECTORY, CONFIG_NAME);
 
     public static final String README_DIRECTORY = String.format("%s\\%s", MAIN_DIRECTORY, README_NAME);
+
+    public static final String[] README_COMMENTS = {
+            String.format("LocalTicket (%s)", Version.CURRENT),
+            String.format("Released on %s", Version.CURRENT.getReleaseDate()),
+            "Developed by JacobDevelopment",
+            "GitHub Repository: https://github.com/JacobDevelopment/LocalTicket",
+            "--------------------------------------------------------------------"
+    };
 }

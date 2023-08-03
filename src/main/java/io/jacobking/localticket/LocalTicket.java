@@ -32,12 +32,13 @@ public class LocalTicket extends Application {
     }
 
     private static void createReadMe() throws IOException {
-        if (!FileIO.doesFileExist(FileCommons.README_DIRECTORY))
+        if (FileIO.doesFileExist(FileCommons.README_DIRECTORY)) {
             return;
+        }
 
-        final File readMe = FileIO.createFile(FileCommons.README_DIRECTORY);
-        if (readMe.createNewFile()) {
-            FileIO.writeToFile(readMe, "This is a test coment.");
+        if (FileIO.createFile(FileCommons.README_DIRECTORY)) {
+            final File file = new File(FileCommons.README_DIRECTORY);
+            FileIO.writeToFile(file, FileCommons.README_COMMENTS);
         }
     }
 }

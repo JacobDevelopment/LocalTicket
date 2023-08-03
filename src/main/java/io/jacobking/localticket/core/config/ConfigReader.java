@@ -31,8 +31,7 @@ public class ConfigReader {
     private boolean doesConfigFileExist() {
         try {
             if (!FileIO.doesFileExist(FileCommons.CONFIG_DIRECTORY)) {
-                final File file = FileIO.createFile(FileCommons.CONFIG_DIRECTORY);
-                return file.exists();
+                return FileIO.createFile(FileCommons.CONFIG_DIRECTORY);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
