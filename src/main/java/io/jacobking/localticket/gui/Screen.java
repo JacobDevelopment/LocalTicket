@@ -13,12 +13,13 @@ import java.io.IOException;
 public abstract class Screen {
 
     protected final String title = "LocalTicket";
-    private final Screen parent;
     private final int width;
     private final int height;
     private final String name;
+
+    private Stage stage;
+
     public Screen(int width, int height, String name) {
-        this.parent = null;
         this.width = width;
         this.height = height;
         this.name = name;
@@ -30,6 +31,7 @@ public abstract class Screen {
         try {
             final FXMLLoader loader = getLoader();
             final Scene scene = new Scene(loader.load(), width, height);
+            this.stage = stage;
             stage.setResizable(false);
             stage.setTitle(title);
             stage.setScene(scene);
@@ -48,8 +50,8 @@ public abstract class Screen {
         return name.concat(".fxml");
     }
 
-    public Screen getParent() {
-        return parent;
+    public Stage getStage() {
+        return stage;
     }
 
     public String getName() {

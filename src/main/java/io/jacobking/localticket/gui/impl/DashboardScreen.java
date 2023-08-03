@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 public class DashboardScreen extends Screen {
 
     public DashboardScreen() {
-        super(800, 400, "dashboard");
+        super(1000, 500, "dashboard");
     }
 
     @Override

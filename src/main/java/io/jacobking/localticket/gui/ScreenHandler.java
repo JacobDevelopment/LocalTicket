@@ -1,7 +1,10 @@
 package io.jacobking.localticket.gui;
 
 import io.jacobking.localticket.gui.impl.DashboardScreen;
+import io.jacobking.localticket.gui.impl.TicketViewerScreen;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,7 +13,7 @@ public final class ScreenHandler {
 
     private static final ScreenHandler instance = new ScreenHandler();
     private final Screen dashboard;
-
+    private final Screen ticketViewer;
     private final Map<String, Screen> screenMap;
 
     private Screen currentScreen = null;
@@ -18,6 +21,7 @@ public final class ScreenHandler {
     private ScreenHandler() {
         this.screenMap = new HashMap<>();
         this.dashboard = new DashboardScreen();
+        this.ticketViewer = new TicketViewerScreen();
         initialize();
     }
 
@@ -29,6 +33,7 @@ public final class ScreenHandler {
 
     private void initialize() {
         put(dashboard);
+        put(ticketViewer);
     }
 
     private void put(final Screen screen) {
@@ -40,19 +45,39 @@ public final class ScreenHandler {
     }
 
     public void display(final String name) {
-        System.out.println(name);
        final Screen screen = get(name.toLowerCase());
        if (screen == null) {
-           System.out.println("screen is null");
-           // TODO: Implement error handling.
            return;
        }
-
-       if (currentScreen == screen)
-           return;
 
        this.currentScreen = screen;
        currentScreen.initialize(new Stage());
     }
 
+    public void displayAsPopup(final String name) {
+        final Screen screen = get(name.toLowerCase());
+        if (screen == null) {
+            return;
+        }
+
+        if (currentScreen == null) {
+            return;
+        }
+
+        final Window window = currentScreen.getStage().getScene().getWindow();
+        final Stage stage = new Stage();
+
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.initOwner(window);
+        screen.initialize(stage);
+    }
+
+    public void close(final String name) {
+        final Screen screen = get(name.toLowerCase());
+        if (screen == null) {
+            return;
+        }
+
+        screen.getStage().close();
+    }
 }

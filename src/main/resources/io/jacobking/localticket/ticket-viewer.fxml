@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" styleClass="main-background" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.jacobking.localticket.gui.controller.TicketViewController">
+   <children>
+      <ListView fx:id="ticketList" layoutX="4.0" layoutY="50.0" prefHeight="300.0" prefWidth="392.0" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onOpenTicket" styleClass="core-button" stylesheets="@styles.css" text="Open Ticket" />
+      <Button layoutX="103.0" layoutY="14.0" mnemonicParsing="false" onAction="#onDeleteTicket" styleClass="core-button" stylesheets="@styles.css" text="Delete Ticket" />
+      <Button layoutX="200.0" layoutY="14.0" mnemonicParsing="false" onAction="#onImportTicket" styleClass="core-button" stylesheets="@styles.css" text="Import Ticket" />
+      <Button layoutX="301.0" layoutY="14.0" mnemonicParsing="false" onAction="#onExportTicket" styleClass="core-button" stylesheets="@styles.css" text="Export Ticket" />
+      <Button fx:id="cancelButton" layoutX="333.0" layoutY="361.0" mnemonicParsing="false" onAction="#onCancel" styleClass="core-button" stylesheets="@styles.css" text="Cancel" />
+      <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#onHelp" styleClass="core-button" stylesheets="@styles.css" text="Help" />
+   </children>
+</Pane>

@@ -48,6 +48,10 @@
     -fx-border-style: solid;
 }
 
+.main-background {
+    -fx-background-color: -fx-primary;
+}
+
 .core-menu-button {
     -fx-background-color: -fx-primary;
     -fx-text-fill: -fx-blue-text;
@@ -82,4 +86,10 @@
 
 .profile-image {
 
+}
+
+.ticket-viewer {
+    -fx-border-color: -fx-blue-text;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
 }

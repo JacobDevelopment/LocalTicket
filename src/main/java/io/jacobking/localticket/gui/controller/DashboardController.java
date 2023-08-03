@@ -1,15 +1,15 @@
 package io.jacobking.localticket.gui.controller;
 
+import io.jacobking.localticket.utility.Styler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Pane;
-import javafx.scene.shape.Circle;
 
+
+import javafx.scene.control.Tab;
+import javafx.scene.shape.Circle;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.ResourceBundle;
 
 public class DashboardController implements Initializable {
@@ -19,6 +19,12 @@ public class DashboardController implements Initializable {
 
     @FXML
     private Circle profilePictureCircle;
+
+    @FXML
+    private Tab ticketTab;
+
+    @FXML
+    private TicketController ticketController;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
