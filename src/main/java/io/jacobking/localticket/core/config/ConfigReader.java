@@ -42,9 +42,9 @@ public class ConfigReader {
     private void writeDefaultProperties(final File file) throws IOException {
         final Properties properties = new Properties();
         properties.load(new FileReader(FileCommons.CONFIG_DIRECTORY));
-        properties.setProperty("database_url", "test");
-        properties.setProperty("database_username", "");
-        properties.setProperty("database_password", "");
+        properties.setProperty("database_url", FileCommons.DATABASE_FILE);
+        properties.setProperty("database_username", "administrator");
+        properties.setProperty("database_password", "password");
         properties.setProperty("profile_url", "");
         properties.store(new FileWriter(file), null);
     }

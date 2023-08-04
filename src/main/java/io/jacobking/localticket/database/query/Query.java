@@ -48,11 +48,11 @@ public class Query {
         return new Query(query);
     }
 
-    public boolean execute() {
+    public int executeUpdate() {
         try {
             final PreparedStatement preparedStatement = connection.prepareStatement(query);
             queryList.applyTo(preparedStatement);
-            return preparedStatement.execute();
+            return preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

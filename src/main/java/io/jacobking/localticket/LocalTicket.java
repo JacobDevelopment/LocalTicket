@@ -6,6 +6,7 @@ import io.jacobking.localticket.core.misc.Version;
 import io.jacobking.localticket.core.utility.FileCommons;
 import io.jacobking.localticket.core.utility.FileIO;
 import io.jacobking.localticket.database.Database;
+import io.jacobking.localticket.database.query.Query;
 import io.jacobking.localticket.gui.ScreenHandler;
 import io.jacobking.localticket.gui.impl.DashboardScreen;
 import javafx.application.Application;
