@@ -1,10 +1,18 @@
 package io.jacobking.localticket.database;
 
+import io.jacobking.localticket.LocalTicket;
 import io.jacobking.localticket.core.utility.FileCommons;
 import io.jacobking.localticket.core.utility.FileIO;
 import io.jacobking.localticket.database.query.Query;
+import org.apache.commons.io.FileUtils;
 
-import java.io.IOException;
+import java.io.*;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class Database {
 
@@ -30,21 +38,18 @@ public class Database {
         }
 
         if (!FileIO.doesFileExist(FileCommons.DATABASE_FILE)) {
-            try {
-                FileIO.createFile(FileCommons.DATABASE_FILE);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            writeDatabaseScheme();
+            copyDefaultDatabase();
         }
     }
 
-    private void writeDatabaseScheme() {
-        final boolean test = Query.build("CREATE TABLE TESTING(lol TEXT);").execute();
-        if (test) {
-            System.out.println("executed");
-        } else {
-            System.out.println("Failed");
+    private void copyDefaultDatabase() {
+        try (final InputStream inputStream = LocalTicket.class.getResourceAsStream("default.sqlite")) {
+            if (inputStream == null)
+                return;
+            final File file = new File(FileCommons.DATABASE_FILE);
+            FileUtils.copyInputStreamToFile(inputStream, file);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

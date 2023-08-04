@@ -9,15 +9,12 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.time.Duration;
-import java.util.concurrent.atomic.AtomicInteger;
+
 
 public class ConnectionPool {
 
     private static final long KEEP_ALIVE_IN_MS = Duration.ofMinutes(2).toMillis();
     private static final long TIMEOUT_IN_MS = Duration.ofMinutes(10).toMillis();
-
-    private static final int MAX_ATTEMPTS = 5;
-    private final AtomicInteger RETRY_COUNTER = new AtomicInteger();
     private static final Config config = Config.getInstance();
     private final HikariConfig hikariConfig;
 

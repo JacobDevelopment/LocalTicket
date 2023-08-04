@@ -5,6 +5,7 @@ module io.jacobking.localticket {
     requires org.controlsfx.controls;
     requires com.zaxxer.hikari;
     requires org.xerial.sqlitejdbc;
+    requires org.apache.commons.io;
 
     opens io.jacobking.localticket to javafx.fxml;
     opens io.jacobking.localticket.gui.controller to javafx.fxml;
