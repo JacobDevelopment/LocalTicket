@@ -36,7 +36,7 @@ public class Config {
     }
 
     public String getDatabaseUrl() {
-        return databaseUrl;
+        return String.format("jdbc:sqlite:%s", this.databaseUrl);
     }
 
     public String getDatabaseUsername() {

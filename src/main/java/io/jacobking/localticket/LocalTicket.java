@@ -37,7 +37,6 @@ public class LocalTicket extends Application {
         createChangelog();
         Config.getInstance().initialize();
         Database.getInstance();
-
         launch();
     }
 

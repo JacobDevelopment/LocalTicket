@@ -17,4 +17,12 @@ public final class Checks {
             throw new IllegalArgumentException(name + " is empty!");
         }
     }
+
+    public static void noneNull(final Object... objects) {
+        for (final Object object : objects) {
+            if (object == null) {
+                throw new IllegalArgumentException("One of the passed objects is null!");
+            }
+        }
+    }
 }

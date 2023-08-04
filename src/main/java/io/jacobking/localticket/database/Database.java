@@ -2,17 +2,15 @@ package io.jacobking.localticket.database;
 
 import io.jacobking.localticket.core.utility.FileCommons;
 import io.jacobking.localticket.core.utility.FileIO;
+import io.jacobking.localticket.database.query.Query;
 
 import java.io.IOException;
 
 public class Database {
 
     private static final Database instance = new Database();
-
-    private boolean isConnected;
     private final ConnectionPool connectionPool;
     private Database() {
-        this.isConnected = false;
         this.connectionPool = new ConnectionPool();
         init();
     }
@@ -37,28 +35,21 @@ public class Database {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            connectionPool.connect();
             writeDatabaseScheme();
-            return;
         }
-
-        connectionPool.connect();
     }
 
     private void writeDatabaseScheme() {
-
+        final boolean test = Query.build("CREATE TABLE TESTING(lol TEXT);").execute();
+        if (test) {
+            System.out.println("executed");
+        } else {
+            System.out.println("Failed");
+        }
     }
 
-    public boolean isConnected() {
-        return isConnected;
-    }
-
-    public void setConnected() {
-        this.isConnected = true;
-    }
-
-    public static boolean isInitialized() {
-        return instance.isConnected();
+    public ConnectionPool getConnectionPool() {
+        return connectionPool;
     }
 
 }
