@@ -15,7 +15,5 @@ module io.jacobking.localticket {
     opens io.jacobking.localticket.core.object to javafx.base;
     exports io.jacobking.localticket.core.object to javafx.base;
 
-    opens io.jacobking.localticket.database;
-    exports io.jacobking.localticket.database to com.zaxxer.hikari;
 }
 

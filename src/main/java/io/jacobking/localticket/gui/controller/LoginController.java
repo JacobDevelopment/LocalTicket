@@ -1,6 +1,5 @@
 package io.jacobking.localticket.gui.controller;
 
-import io.jacobking.localticket.core.utility.Startup;
 import io.jacobking.localticket.gui.ScreenHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -35,7 +34,6 @@ public class LoginController {
 
         if (isAuthenticated(username, password)) {
             ScreenHandler.getInstance().display("dashboard");
-            Startup.begin();
         } else {
             warningLabel.setText("Invalid credentials, please try again.");
         }

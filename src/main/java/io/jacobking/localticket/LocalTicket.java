@@ -1,11 +1,9 @@
 package io.jacobking.localticket;
 
-import io.jacobking.localticket.database.Database;
+import io.jacobking.localticket.core.proctor.StartupProctor;
 import io.jacobking.localticket.gui.ScreenHandler;
 import javafx.application.Application;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 
 public class LocalTicket extends Application {
     @Override
@@ -13,8 +11,9 @@ public class LocalTicket extends Application {
         ScreenHandler.getInstance().display("login");
     }
 
-    public static void main(String[] args) throws IOException {
-        launch();
+    public static void main(String[] args) {
+        StartupProctor.getInstance();
+       // launch();
     }
 
 
