@@ -93,3 +93,36 @@
     -fx-border-width: 2px;
     -fx-border-style: solid;
 }
+
+.loading-labels {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-family: Calibri;
+}
+
+.progress-indicator {
+    -fx-progress-color: -fx-warning;
+}
+
+.connected-label-header {
+    -fx-text-fill: white;
+}
+
+.connected-label {
+    -fx-text-fill: lightgreen;
+}
+
+.login-header {
+    -fx-text-fill: -fx-blue-text;
+    -fx-font-size: 40px;
+    -fx-font-family: Calibri;
+}
+
+.login {
+    -fx-background-color: -fx-primary;
+}
+
+.warning-label {
+    -fx-text-fill: -fx-warning;
+    -fx-font-family: Calibri;
+}

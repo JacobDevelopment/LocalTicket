@@ -57,4 +57,8 @@ public abstract class Screen {
     public String getName() {
         return name;
     }
+
+    public Parent getRoot() {
+        return stage.getScene().getRoot();
+    }
 }

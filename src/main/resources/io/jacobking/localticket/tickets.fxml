@@ -10,10 +10,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="471.0" prefWidth="806.0" styleClass="anchor-background" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.jacobking.localticket.gui.controller.TicketController">
+<AnchorPane prefHeight="471.0" prefWidth="806.0" styleClass="anchor-background" stylesheets="@styles/styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.jacobking.localticket.gui.controller.TicketController">
     <children>
-        <Button layoutX="14.0" layoutY="56.0" mnemonicParsing="false" onAction="#onOpen" styleClass="core-button" stylesheets="@styles.css" text="Open" />
-        <AnchorPane layoutX="14.0" layoutY="89.0" prefHeight="378.0" prefWidth="800.0" styleClass="ticket-viewer" stylesheets="@styles.css">
+        <Button layoutX="14.0" layoutY="56.0" mnemonicParsing="false" onAction="#onOpen" styleClass="core-button" stylesheets="@styles/styles.css" text="Open" />
+        <AnchorPane layoutX="14.0" layoutY="89.0" prefHeight="378.0" prefWidth="800.0" styleClass="ticket-viewer" stylesheets="@styles/styles.css">
             <children>
                 <TextField fx:id="subjectField" layoutX="98.0" layoutY="7.0" />
                 <TextArea fx:id="informationArea" layoutX="23.0" layoutY="67.0" prefHeight="307.0" prefWidth="449.0" />
@@ -49,7 +49,7 @@
                 </Label>
             </children>
         </AnchorPane>
-        <Button layoutX="68.0" layoutY="56.0" mnemonicParsing="false" onAction="#onClear" prefHeight="25.0" prefWidth="53.0" styleClass="core-button" stylesheets="@styles.css" text="Clear" />
-      <Button layoutX="133.0" layoutY="56.0" mnemonicParsing="false" onAction="#onClear" prefHeight="25.0" prefWidth="53.0" styleClass="core-button" stylesheets="@styles.css" text="Save" />
+        <Button layoutX="68.0" layoutY="56.0" mnemonicParsing="false" onAction="#onClear" prefHeight="25.0" prefWidth="53.0" styleClass="core-button" stylesheets="@styles/styles.css" text="Clear" />
+      <Button layoutX="133.0" layoutY="56.0" mnemonicParsing="false" onAction="#onClear" prefHeight="25.0" prefWidth="53.0" styleClass="core-button" stylesheets="@styles/styles.css" text="Save" />
     </children>
 </AnchorPane>

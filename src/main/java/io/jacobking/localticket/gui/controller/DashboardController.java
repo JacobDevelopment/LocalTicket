@@ -2,11 +2,11 @@ package io.jacobking.localticket.gui.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 
 
-import javafx.scene.control.Tab;
 import javafx.scene.shape.Circle;
+
 import java.net.URL;
 
 import java.util.ResourceBundle;
@@ -20,15 +20,21 @@ public class DashboardController implements Initializable {
     private Circle profilePictureCircle;
 
     @FXML
-    private Tab ticketTab;
+    private Button settingsButton;
 
     @FXML
     private TicketController ticketController;
 
+    @FXML
+    private ProgressIndicator progress;
+
+    @FXML
+    private TabPane tabPane;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
     }
+
 
     @FXML
     private void onProfile() {

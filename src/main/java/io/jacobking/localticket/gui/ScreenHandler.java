@@ -1,6 +1,7 @@
 package io.jacobking.localticket.gui;
 
 import io.jacobking.localticket.gui.impl.DashboardScreen;
+import io.jacobking.localticket.gui.impl.LoginScreen;
 import io.jacobking.localticket.gui.impl.TicketViewerScreen;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -12,14 +13,17 @@ import java.util.Map;
 public final class ScreenHandler {
 
     private static final ScreenHandler instance = new ScreenHandler();
+
+    private final Screen login;
+
     private final Screen dashboard;
     private final Screen ticketViewer;
     private final Map<String, Screen> screenMap;
-
     private Screen currentScreen = null;
 
     private ScreenHandler() {
         this.screenMap = new HashMap<>();
+        this.login = new LoginScreen();
         this.dashboard = new DashboardScreen();
         this.ticketViewer = new TicketViewerScreen();
         initialize();
@@ -32,6 +36,7 @@ public final class ScreenHandler {
     }
 
     private void initialize() {
+        put(login);
         put(dashboard);
         put(ticketViewer);
     }
@@ -79,5 +84,9 @@ public final class ScreenHandler {
         }
 
         screen.getStage().close();
+    }
+
+    public Screen getCurrentScreen() {
+        return currentScreen;
     }
 }
