@@ -15,7 +15,6 @@ public final class ScreenHandler {
     private static final ScreenHandler instance = new ScreenHandler();
 
     private final Screen login;
-
     private final Screen dashboard;
     private final Screen ticketViewer;
     private final Map<String, Screen> screenMap;
@@ -53,6 +52,10 @@ public final class ScreenHandler {
        final Screen screen = get(name.toLowerCase());
        if (screen == null) {
            return;
+       }
+
+       if (currentScreen != null) {
+           close(currentScreen.getName());
        }
 
        this.currentScreen = screen;

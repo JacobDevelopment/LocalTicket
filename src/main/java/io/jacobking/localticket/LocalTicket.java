@@ -1,6 +1,5 @@
 package io.jacobking.localticket;
 
-import io.jacobking.localticket.core.config.Config;
 import io.jacobking.localticket.database.Database;
 import io.jacobking.localticket.gui.ScreenHandler;
 import javafx.application.Application;

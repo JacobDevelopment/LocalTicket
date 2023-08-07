@@ -4,13 +4,13 @@ import io.jacobking.localticket.core.utility.StringUtil;
 
 public final class Version {
 
-    public static final Version CURRENT = new Version(0, 0, 8, "8/3/2023")
+    public static final Version CURRENT = new Version(0, 0, 0, "8/3/2023")
             .addChange("Completed versioning semantics.")
             .addChange("Added config creation.")
-            .addChange("Started production of database handling.");
+            .addChange("Started production of database handling.")
+            .addChange("Added login screen, beginning the authentication process.");
 
-    public static final Version PAST = new Version(0,0, 0, "8/1/2023")
-            .addChange("Began development of LocalTicket.");
+    public static final Version PAST = null;
 
     private final int major;
     private final int minor;
