@@ -8,10 +8,11 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Connection;
 
 public class DatabaseCore {
 
-    private static final String DEFAULT_PATH = "sql/core.sqlite";
+    private static final String DEFAULT_PATH = "sql/LocalTicket.mv.db";
 
     private boolean initialized = false;
 
@@ -48,6 +49,10 @@ public class DatabaseCore {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void writeContents() {
+
     }
 
     private InputStream getDefaultDatabaseStream() {

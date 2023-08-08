@@ -4,6 +4,7 @@ plugins {
   id 'org.javamodularity.moduleplugin' version '1.8.12'
   id 'org.openjfx.javafxplugin' version '0.0.13'
   id 'org.beryx.jlink' version '2.25.0'
+  id 'nu.studer.jooq' version '8.2'
 }
 
 group 'io.jacobking'
@@ -37,9 +38,11 @@ javafx {
 dependencies {
   implementation('org.controlsfx:controlsfx:11.1.2')
   implementation group: 'com.zaxxer', name: 'HikariCP', version: '5.0.1'
-  implementation group: 'org.xerial', name: 'sqlite-jdbc', version: '3.42.0.0'
-  implementation 'net.zetetic:android-database-sqlcipher:4.4.2'
   implementation 'commons-io:commons-io:2.13.0'
+  implementation group: 'com.h2database', name: 'h2', version: '2.2.220'
+  implementation group: 'com.password4j', name: 'password4j', version: '1.7.1'
+  jooqGenerator 'com.h2database:h2database:2.2.220'
+  implementation 'org.jooq:jooq:3.18.5'
 }
 
 test {
@@ -55,4 +58,63 @@ jlink {
 
 jlinkZip {
   group = 'distribution'
+}
+
+import org.jooq.meta.jaxb.Logging
+
+jooq {
+  version = '3.18.4'  // default (can be omitted)
+  edition = nu.studer.gradle.jooq.JooqEdition.OSS  // default (can be omitted)
+
+  configurations {
+    main {  // name of the jOOQ configuration
+      generateSchemaSourceOnCompilation = true  // default (can be omitted)
+
+      generationTool {
+        logging = Logging.WARN
+        jdbc {
+          driver = 'org.h2.Driver'
+          url = 'io/jacobking/localticket/sql/LocalTicket.mv.db'
+          user = 'admin'
+          password = 'MASTERKEY'
+          properties {
+            property {
+              key = 'ssl'
+              value = 'true'
+            }
+          }
+        }
+        generator {
+          name = 'org.jooq.codegen.DefaultGenerator'
+          database {
+            name = 'org.jooq.meta.postgres.PostgresDatabase'
+            inputSchema = 'public'
+            forcedTypes {
+              forcedType {
+                name = 'varchar'
+                includeExpression = '.*'
+                includeTypes = 'JSONB?'
+              }
+              forcedType {
+                name = 'varchar'
+                includeExpression = '.*'
+                includeTypes = 'INET'
+              }
+            }
+          }
+          generate {
+            deprecated = false
+            records = true
+            immutablePojos = true
+            fluentSetters = true
+          }
+          target {
+            packageName = ''
+            directory = 'io.jacobking.jooq'  // default (can be omitted)
+          }
+          strategy.name = 'org.jooq.codegen.DefaultGeneratorStrategy'
+        }
+      }
+    }
+  }
 }

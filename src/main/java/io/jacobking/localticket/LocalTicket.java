@@ -13,12 +13,9 @@ public class LocalTicket extends Application {
     }
 
     public static void main(String[] args) {
-        System.load("sqlcipher");
-        System.load("stlport_shared");
-
         StartupProctor.getInstance();
 
-       launch();
+        //launch();
     }
 
 
