@@ -12,7 +12,7 @@ import java.sql.Connection;
 
 public class DatabaseCore {
 
-    private static final String DEFAULT_PATH = "sql/LocalTicket.mv.db";
+    private static final String DEFAULT_PATH = "sql/LocalTicket.db";
 
     private boolean initialized = false;
 
