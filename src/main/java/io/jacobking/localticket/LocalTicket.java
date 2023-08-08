@@ -15,7 +15,7 @@ public class LocalTicket extends Application {
     public static void main(String[] args) {
         StartupProctor.getInstance();
 
-        //launch();
+        launch();
     }
 
 
