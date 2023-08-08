@@ -6,6 +6,7 @@ module io.jacobking.localticket {
     requires com.zaxxer.hikari;
     requires org.xerial.sqlitejdbc;
     requires org.apache.commons.io;
+    requires net.ze
 
     opens io.jacobking.localticket to javafx.fxml;
     opens io.jacobking.localticket.gui.controller to javafx.fxml;
@@ -15,5 +16,6 @@ module io.jacobking.localticket {
     opens io.jacobking.localticket.core.object to javafx.base;
     exports io.jacobking.localticket.core.object to javafx.base;
 
+    opens io.jacobking.localticket.database;
 }
 

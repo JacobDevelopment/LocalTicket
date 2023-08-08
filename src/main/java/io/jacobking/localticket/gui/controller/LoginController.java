@@ -1,5 +1,6 @@
 package io.jacobking.localticket.gui.controller;
 
+import io.jacobking.localticket.database.ConnectionPool;
 import io.jacobking.localticket.gui.ScreenHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -41,7 +42,8 @@ public class LoginController {
 
     // TODO: Handle authentication.
     private boolean isAuthenticated(final String username, final String password) {
-        return true;
+        final ConnectionPool connectionPool = new ConnectionPool();
+        return connectionPool.connect(password);
     }
 
     @FXML

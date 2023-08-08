@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:sqlite:C:\Users\JKING.SEATINGCONCEPTS\LocalTicket\database\lt-db.sqlite</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="LocalTicket.sqlite" uuid="a25aa1d8-0f16-44b3-b18e-284a222318b4">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\JKING.SEATINGCONCEPTS\LocalTicket\DATABASE\LocalTicket.sqlite</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
