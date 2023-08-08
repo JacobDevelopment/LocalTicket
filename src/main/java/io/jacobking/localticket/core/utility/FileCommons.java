@@ -7,7 +7,7 @@ public class FileCommons {
     private static final String CONFIG_FILE_NAME = "settings.config";
     private static final String DIRECTORY_NAME = "LocalTicket";
 
-    public static final String DATABASE_NAME = "LocalTicket.mv.db";
+    public static final String DATABASE_NAME = "LocalTicket.db";
     public static final String MAIN_DIRECTORY = String.format("%s%s%s", USER_HOME, FILE_SEPARATOR, DIRECTORY_NAME);
     public static final String CONFIG_PATH = String.format("%s%s%s", MAIN_DIRECTORY, FILE_SEPARATOR, CONFIG_FILE_NAME);
 

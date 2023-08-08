@@ -1,7 +1,9 @@
 package io.jacobking.localticket.gui.controller;
 
+import io.jacobking.jooq.tables.pojos.Security;
 import io.jacobking.localticket.database.ConnectionPool;
 import io.jacobking.localticket.database.Database;
+import io.jacobking.localticket.database.handling.SecurityHandler;
 import io.jacobking.localticket.gui.ScreenHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -46,7 +48,19 @@ public class LoginController {
         if (!Database.getInstance().isLive())
             return false;
 
-        return Database.getInstance().authenticate(username, password);
+        final SecurityHandler security = Database.getInstance().getSecurity();
+        final boolean isFirstLogin = security.isFirstLogin();
+        if (isFirstLogin) {
+            System.out.println("First Login Initiated.");
+            return security.save(username, password, 1, 5);
+        }
+
+        if (security.verify(username, password)) {
+            return true;
+        } else {
+            security.decrementLoginAttempts(username);
+            return false;
+        }
     }
 
     @FXML

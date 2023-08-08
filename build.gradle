@@ -37,12 +37,12 @@ javafx {
 
 dependencies {
   implementation('org.controlsfx:controlsfx:11.1.2')
+  implementation group: 'org.xerial', name: 'sqlite-jdbc', version: '3.42.0.0'
   implementation group: 'com.zaxxer', name: 'HikariCP', version: '5.0.1'
   implementation 'commons-io:commons-io:2.13.0'
-  implementation group: 'com.h2database', name: 'h2', version: '2.2.220'
   implementation group: 'com.password4j', name: 'password4j', version: '1.7.1'
-  jooqGenerator 'com.h2database:h2database:2.2.220'
   implementation 'org.jooq:jooq:3.18.5'
+  jooqGenerator 'org.xerial:sqlite-jdbc:3.42.0.0'
 }
 
 test {
@@ -68,39 +68,17 @@ jooq {
 
   configurations {
     main {  // name of the jOOQ configuration
-      generateSchemaSourceOnCompilation = true  // default (can be omitted)
 
       generationTool {
         logging = Logging.WARN
         jdbc {
-          driver = 'org.h2.Driver'
-          url = 'io/jacobking/localticket/sql/LocalTicket.mv.db'
-          user = 'admin'
-          password = 'MASTERKEY'
-          properties {
-            property {
-              key = 'ssl'
-              value = 'true'
-            }
-          }
+          driver = 'org.sqlite.JDBC'
+          url = 'jdbc:sqlite:C:\\Users\\JKING.SEATINGCONCEPTS\\IdeaProjects\\LocalTicket\\src\\main\\resources\\io\\jacobking\\localticket\\sql\\LocalTicket.db'
         }
         generator {
           name = 'org.jooq.codegen.DefaultGenerator'
           database {
-            name = 'org.jooq.meta.postgres.PostgresDatabase'
-            inputSchema = 'public'
-            forcedTypes {
-              forcedType {
-                name = 'varchar'
-                includeExpression = '.*'
-                includeTypes = 'JSONB?'
-              }
-              forcedType {
-                name = 'varchar'
-                includeExpression = '.*'
-                includeTypes = 'INET'
-              }
-            }
+            name = 'org.jooq.meta.sqlite.SQLiteDatabase'
           }
           generate {
             deprecated = false
@@ -109,7 +87,7 @@ jooq {
             fluentSetters = true
           }
           target {
-            packageName = ''
+            packageName = 'io.jacobking.jooq'
             directory = 'io.jacobking.jooq'  // default (can be omitted)
           }
           strategy.name = 'org.jooq.codegen.DefaultGeneratorStrategy'

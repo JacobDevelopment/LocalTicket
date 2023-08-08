@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="LocalTicket" uuid="0e376a9d-01b7-4684-8fe1-ca5012a622cb">
-      <driver-ref>h2.unified</driver-ref>
+    <data-source source="LOCAL" name="LocalTicket.db" uuid="8a0d3418-682c-4ee2-94ea-7bf5e0c6efc2">
+      <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>org.h2.Driver</jdbc-driver>
-      <jdbc-url>jdbc:h2:$PROJECT_DIR$/src/main/resources/io/jacobking/localticket/sql/LocalTicket</jdbc-url>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\JKING.SEATINGCONCEPTS\IdeaProjects\LocalTicket\src\main\resources\io\jacobking\localticket\sql\LocalTicket.db</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="STORED DB" uuid="20c287e1-526f-4792-a7f7-114964c16bdf">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$USER_HOME$/LocalTicket/DATABASE/LocalTicket.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

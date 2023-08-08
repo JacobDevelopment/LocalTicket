@@ -5,8 +5,8 @@ module io.jacobking.localticket {
     requires org.controlsfx.controls;
     requires com.zaxxer.hikari;
     requires org.apache.commons.io;
-    requires com.h2database;
     requires java.sql;
+    requires org.jooq;
 
     opens io.jacobking.localticket to javafx.fxml;
     opens io.jacobking.localticket.gui.controller to javafx.fxml;
@@ -17,6 +17,5 @@ module io.jacobking.localticket {
     exports io.jacobking.localticket.core.object to javafx.base;
 
     opens io.jacobking.localticket.database;
-    exports io.jacobking.localticket.database to com.h2database;
 }
 
